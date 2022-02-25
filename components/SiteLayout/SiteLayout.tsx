@@ -12,7 +12,7 @@ export function SiteLayout({ children }: Props) {
   return (
     <div className={styles.area}>
       <FormHeader />
-      <div className={styles.content}>{children}</div>
+      <main className={styles.mainContent}>{children}</main>
       <FormFooter />
     </div>
   )
