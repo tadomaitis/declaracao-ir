@@ -1,0 +1,11 @@
+.inputContainer {
+  @apply col-span-full sm:col-span-3;
+}
+
+.inputLabel {
+  @apply text-sm;
+}
+
+.input {
+  @apply w-full rounded-md border text-gray-900 focus:ring focus:ring-violet-600 focus:ring-opacity-75;
+}
