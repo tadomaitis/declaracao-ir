@@ -1,0 +1,8 @@
+.forwardLink {
+  @apply float-right mt-2 block cursor-pointer rounded-md bg-violet-700 p-3
+  text-xl font-bold text-slate-50 hover:bg-violet-500;
+}
+
+.forwardLinkIcon {
+  @apply inline;
+}

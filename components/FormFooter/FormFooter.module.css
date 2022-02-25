@@ -1,0 +1,19 @@
+.footer {
+  @apply bg-violet-700 py-2 text-gray-50;
+}
+
+.footerContent {
+  @apply ml-6 flex w-72 flex-col text-base;
+}
+
+.footerCol {
+  @apply mb-2 flex flex-col py-1;
+}
+
+.colTitle {
+  @apply mb-1 text-xl font-medium;
+}
+
+.contact {
+  @apply flex items-center gap-2;
+}

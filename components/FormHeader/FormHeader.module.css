@@ -1,0 +1,7 @@
+.header {
+  @apply bg-violet-700 py-4;
+}
+
+.headerTitle {
+  @apply ml-4 text-2xl font-bold text-gray-50;
+}

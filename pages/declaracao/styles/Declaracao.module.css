@@ -1,0 +1,15 @@
+.mainContent {
+  @apply mx-6 flex flex-col text-gray-900 md:flex-row;
+}
+
+.welcomeImage {
+  @apply relative mx-auto my-2 min-h-[180px] w-1/2 overflow-hidden rounded-sm;
+}
+
+.mainTitle {
+  @apply mt-2 mb-4 text-3xl font-bold text-violet-700;
+}
+
+.mainText {
+  @apply mt-4 text-lg;
+}
