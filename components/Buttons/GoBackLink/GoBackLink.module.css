@@ -1,0 +1,8 @@
+.goBackLink {
+  @apply mt-2 block max-w-[120px] cursor-pointer py-3 text-xl
+  font-bold text-violet-700 underline underline-offset-4 hover:text-violet-500;
+}
+
+.goBackLinkIcon {
+  @apply inline;
+}

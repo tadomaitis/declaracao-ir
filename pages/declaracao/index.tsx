@@ -2,7 +2,7 @@ import Image from 'next/image'
 import { SiteLayout } from '@components/SiteLayout/SiteLayout'
 
 import styles from './styles/Declaracao.module.css'
-import { GoForwardLink } from '@components/GoForwardLink/GoForwardLink'
+import { GoForwardLink } from '@components/Buttons/GoForwardLink/GoForwardLink'
 
 const Declaracao = () => {
   return (
