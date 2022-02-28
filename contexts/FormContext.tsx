@@ -12,6 +12,7 @@ export enum FormActions {
   setSurname,
   setFullName,
   setCPF,
+  setChangesFromPreviousDeclaration,
   setPhone,
   setHasDeclaredBefore,
   setIsAlreadyClient,
@@ -50,8 +51,9 @@ const initialClientData: Client = {
   fullName: '',
   cpf: '',
   phone: '',
-  hasDeclaredBefore: false,
+  hasDeclaredBefore: true,
   isAlreadyClient: true,
+  changesFromPreviousDeclaration: false,
 }
 
 const FormContext = createContext<ContextType | undefined>(undefined)

@@ -7,6 +7,7 @@ export type Client = {
   phone: string
   hasDeclaredBefore: boolean
   isAlreadyClient: boolean
+  changesFromPreviousDeclaration: boolean
   hasDependents?: boolean
   voterCard?: string
   birthDate?: string
