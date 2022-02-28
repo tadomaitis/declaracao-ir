@@ -1,13 +1,38 @@
+import { ReactElement, useEffect } from 'react'
+
 import { NavButtonsContainer } from '@components/Buttons/NavButtonsContainer/NavButtonsContainer'
 import { SiteLayout } from '@components/SiteLayout/SiteLayout'
 import { Input } from '@components/Form/Input/Input'
 import { SelectOption } from '@components/SelectOption/SelectOption'
+import {
+  FormProvider,
+  useFormContext,
+  FormActions,
+} from '@contexts/FormContext'
 
 import styles from './styles/JaECliente.module.css'
 
-const JaECliente = () => {
+const JaECliente = (): JSX.Element => {
+  const { state, dispatch } = useFormContext()
+
+  useEffect(() => {
+    console.log(state)
+  }, [])
+
   const handleClickOnSelect = () => {
-    console.log('doh')
+    dispatch({
+      type: FormActions.setIsAlreadyClient,
+      payload: !state.isAlreadyClient,
+    })
+  }
+
+  const handleNameInputChange = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    dispatch({
+      type: FormActions.setFirstName,
+      payload: event.target.value,
+    })
   }
 
   return (
@@ -22,18 +47,19 @@ const JaECliente = () => {
         label="Seu nome"
         type="text"
         placeholder="Digite seu primeiro nome"
+        onChange={handleNameInputChange}
       />
       <p className={styles.pageContent}>
         Você já é meu cliente de anos anteriores?
       </p>
       <SelectOption
         label="Sim, eu já declarei IR com você antes"
-        selected={true}
+        selected={state.isAlreadyClient}
         onClick={handleClickOnSelect}
       />
       <SelectOption
         label="Não, esta será a primeira vez"
-        selected={false}
+        selected={!state.isAlreadyClient}
         onClick={handleClickOnSelect}
       />
       <NavButtonsContainer
@@ -42,6 +68,10 @@ const JaECliente = () => {
       />
     </SiteLayout>
   )
+}
+
+JaECliente.getLayout = function getLayout(page: ReactElement): ReactElement {
+  return <FormProvider>{page}</FormProvider>
 }
 
 export default JaECliente
