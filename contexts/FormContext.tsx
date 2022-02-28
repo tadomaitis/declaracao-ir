@@ -8,6 +8,8 @@ type Action = {
 
 export enum FormActions {
   setCurrentStep,
+  setFirstName,
+  setSurname,
   setFullName,
   setCPF,
   setPhone,
