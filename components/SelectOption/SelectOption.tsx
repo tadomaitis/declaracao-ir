@@ -18,7 +18,7 @@ export function SelectOption({ label, selected, onClick }: Props) {
       <div className={styles.selectIcon}>
         {selected && <Image src="/svgs/tick.svg" width={18} height={18} />}
       </div>
-      <p>{label}</p>
+      <p className={styles.label}>{label}</p>
     </div>
   )
 }
