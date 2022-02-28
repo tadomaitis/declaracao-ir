@@ -1,0 +1,15 @@
+/* .selectOption {
+  @apply rounded-lg border border-gray-500 px-2 py-4 text-lg font-medium text-gray-500;
+} */
+
+.selectOption {
+  @apply mb-4 flex rounded-lg bg-violet-50 px-2 py-4 text-lg text-violet-500;
+}
+
+.selectIcon {
+  @apply mr-2 flex h-6 w-6 items-center justify-center rounded-full bg-violet-200 p-1;
+}
+
+.selectedOption {
+  @apply bg-violet-500 font-medium text-white;
+}
