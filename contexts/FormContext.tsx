@@ -49,7 +49,7 @@ const initialClientData: Client = {
   cpf: '',
   phone: '',
   hasDeclaredBefore: false,
-  isAlreadyClient: false,
+  isAlreadyClient: true,
 }
 
 const FormContext = createContext<ContextType | undefined>(undefined)
