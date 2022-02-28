@@ -1,7 +1,0 @@
-.pageTitle {
-  @apply my-2 text-lg font-medium text-violet-700;
-}
-
-.pageDescription {
-  @apply my-2 text-sm font-medium text-gray-600;
-}

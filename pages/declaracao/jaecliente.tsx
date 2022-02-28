@@ -1,10 +1,15 @@
 import { NavButtonsContainer } from '@components/Buttons/NavButtonsContainer/NavButtonsContainer'
 import { SiteLayout } from '@components/SiteLayout/SiteLayout'
 import { Input } from '@components/Form/Input/Input'
+import { SelectOption } from '@components/SelectOption/SelectOption'
 
-import styles from './styles/Passo1.module.css'
+import styles from './styles/JaECliente.module.css'
 
-const Passo1 = () => {
+const JaECliente = () => {
+  const handleClickOnSelect = () => {
+    console.log('doh')
+  }
+
   return (
     <SiteLayout>
       <h2 className={styles.pageTitle}>Já nos conhecemos?</h2>
@@ -18,6 +23,19 @@ const Passo1 = () => {
         type="text"
         placeholder="Digite seu primeiro nome"
       />
+      <p className={styles.pageContent}>
+        Você já é meu cliente de anos anteriores?
+      </p>
+      <SelectOption
+        label="Sim, eu já declarei IR com você antes"
+        selected={true}
+        onClick={handleClickOnSelect}
+      />
+      <SelectOption
+        label="Não, esta será a primeira vez"
+        selected={false}
+        onClick={handleClickOnSelect}
+      />
       <NavButtonsContainer
         goBackPath="/declaracao"
         goForwardPath="/declaracao/passo2"
@@ -26,4 +44,4 @@ const Passo1 = () => {
   )
 }
 
-export default Passo1
+export default JaECliente

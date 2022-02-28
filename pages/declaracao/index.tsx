@@ -29,7 +29,7 @@ const Declaracao = () => {
           fim de tornar mais dinâmica a organização das informações necessárias.
           Vamos lá?
         </p>
-        <GoForwardLink path="/declaracao/passo1" label="Começar" />
+        <GoForwardLink path="/declaracao/jaecliente" label="Começar" />
       </div>
     </SiteLayout>
   )
