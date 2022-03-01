@@ -1,4 +1,4 @@
-import { ReactElement, useEffect } from 'react'
+import { ReactElement } from 'react'
 
 import { NavButtonsContainer } from '@components/Buttons/NavButtonsContainer/NavButtonsContainer'
 import { SiteLayout } from '@components/SiteLayout/SiteLayout'
@@ -14,10 +14,6 @@ import styles from './styles/JaECliente.module.css'
 
 const JaECliente = (): JSX.Element => {
   const { state, dispatch } = useFormContext()
-
-  useEffect(() => {
-    console.log(state)
-  }, [])
 
   const handleClickOnSelect = () => {
     dispatch({
