@@ -3,5 +3,5 @@
 }
 
 .mainContent {
-  @apply mx-6 flex flex-1 flex-col py-4 text-gray-900 md:flex-row;
+  @apply mx-6 flex flex-1 flex-col py-4 text-gray-900;
 }
