@@ -15,13 +15,6 @@ import styles from '../styles/jaecliente.module.css'
 const JaEClientePasso1 = (): JSX.Element => {
   const { state, dispatch } = useFormContext()
 
-  const handleClickOnSelect = () => {
-    dispatch({
-      type: FormActions.setChangesFromPreviousDeclaration,
-      payload: !state.changesFromPreviousDeclaration,
-    })
-  }
-
   const handleSurnameInputChange = (
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
@@ -48,6 +41,20 @@ const JaEClientePasso1 = (): JSX.Element => {
     dispatch({
       type: FormActions.setPhone,
       payload: event.target.value,
+    })
+  }
+
+  const handleClickOnNoChanges = () => {
+    dispatch({
+      type: FormActions.setChangesFromPreviousDeclaration,
+      payload: false,
+    })
+  }
+
+  const handleClickOnChanges = () => {
+    dispatch({
+      type: FormActions.setChangesFromPreviousDeclaration,
+      payload: true,
     })
   }
 
@@ -94,12 +101,12 @@ const JaEClientePasso1 = (): JSX.Element => {
       <SelectOption
         label="Não, não houve nenhuma alteração de bens e/ou dependentes"
         selected={!state.changesFromPreviousDeclaration}
-        onClick={handleClickOnSelect}
+        onClick={handleClickOnNoChanges}
       />
       <SelectOption
         label="Sim, eu preciso informar alterações"
         selected={state.changesFromPreviousDeclaration}
-        onClick={handleClickOnSelect}
+        onClick={handleClickOnChanges}
       />
       <NavButtonsContainer
         goBackPath="/declaracao/jaecliente"
