@@ -36,6 +36,13 @@ const JaEClientePasso1 = (): JSX.Element => {
     })
   }
 
+  const handleCPFInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    dispatch({
+      type: FormActions.setCPF,
+      payload: event.target.value,
+    })
+  }
+
   return (
     <SiteLayout>
       <h2 className={styles.pageTitle}>
@@ -51,6 +58,13 @@ const JaEClientePasso1 = (): JSX.Element => {
         type="text"
         placeholder="Digite seu sobrenome"
         onChange={handleSurnameInputChange}
+      />
+      <Input
+        id="cpf"
+        label="Seu CPF"
+        type="text"
+        placeholder="Digite seu CPF"
+        onChange={handleCPFInputChange}
       />
       <p className={styles.pageContent}>
         Houve alguma alteração referente a bens (imóveis, veículos e/ou
