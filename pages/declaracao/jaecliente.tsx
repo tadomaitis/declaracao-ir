@@ -64,7 +64,7 @@ const JaECliente = (): JSX.Element => {
       />
       <NavButtonsContainer
         goBackPath="/declaracao"
-        goForwardPath="/declaracao/jaeclientepasso1"
+        goForwardPath="/declaracao/jaecliente/passo1"
       />
     </SiteLayout>
   )

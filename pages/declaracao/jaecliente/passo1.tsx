@@ -11,7 +11,7 @@ import {
   FormActions,
 } from '@contexts/FormContext'
 
-import styles from './styles/JaECliente.module.css'
+import styles from '../styles/JaECliente.module.css'
 
 const JaEClientePasso1 = (): JSX.Element => {
   const { state, dispatch } = useFormContext()
@@ -72,7 +72,10 @@ const JaEClientePasso1 = (): JSX.Element => {
         selected={state.changesFromPreviousDeclaration}
         onClick={handleClickOnSelect}
       />
-      <NavButtonsContainer goBackPath="jaecliente" goForwardPath="#" />
+      <NavButtonsContainer
+        goBackPath="/declaracao/jaecliente"
+        goForwardPath="passo2"
+      />
     </SiteLayout>
   )
 }
