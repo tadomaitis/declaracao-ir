@@ -4,6 +4,7 @@ import { NavButtonsContainer } from '@components/Buttons/NavButtonsContainer/Nav
 import { SiteLayout } from '@components/SiteLayout/SiteLayout'
 import { Input } from '@components/Form/Input/Input'
 import { SelectOption } from '@components/SelectOption/SelectOption'
+import { Warning } from '@components/Warning/Warning'
 import {
   FormProvider,
   useFormContext,
@@ -11,7 +12,6 @@ import {
 } from '@contexts/FormContext'
 
 import styles from './styles/JaECliente.module.css'
-import Image from 'next/image'
 
 const JaEClientePasso1 = (): JSX.Element => {
   const { state, dispatch } = useFormContext()
@@ -56,16 +56,12 @@ const JaEClientePasso1 = (): JSX.Element => {
         Houve alguma alteração referente a bens (imóveis, veículos e/ou
         aplicação financeira) ou dependentes (filhos, cônjuges e/ou pais)?
       </p>
-      <p className={styles.attention}>
-        <div className={styles.iconContainer}>
-          <Image src="/svgs/warning.svg" width={24} height={24} />
-          Atenção
-          <Image src="/svgs/warning.svg" width={24} height={24} />
-        </div>
-        Se seus dependentes trabalharam com registro em carteira ou receberam
-        algum benefício (como auxílio emergencial, por exemplo), você deve
-        retirá-los da declaração. Veja mais em nosso FAQ aqui.
-      </p>
+      <Warning
+        title="Atenção"
+        content="Se seus dependentes trabalharam com registro em carteira ou receberam
+          algum benefício (como auxílio emergencial, por exemplo), você deve
+          retirá-los da declaração. Veja mais em nosso FAQ aqui."
+      />
       <SelectOption
         label="Não, não houve nenhuma alteração de bens e/ou dependentes"
         selected={!state.changesFromPreviousDeclaration}
