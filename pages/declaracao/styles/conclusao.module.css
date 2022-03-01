@@ -1,0 +1,11 @@
+.titleContainer {
+  @apply mt-4 flex flex-col items-center justify-center rounded-lg bg-green-100 py-4 px-2;
+}
+
+.pageTitle {
+  @apply my-2 text-center text-xl font-bold text-green-900;
+}
+
+.pageContent {
+  @apply my-2 text-base text-gray-800;
+}
