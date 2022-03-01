@@ -1,7 +1,11 @@
 .attention {
-  @apply mt-2 mb-4 w-11/12 rounded-md bg-yellow-50 p-2 text-center text-yellow-900;
+  @apply mt-2 mb-4 w-11/12 rounded-md bg-yellow-50 p-2 text-yellow-900;
 }
 
 .iconContainer {
   @apply flex flex-1 justify-center gap-2;
+}
+
+.warningTitle {
+  @apply text-center font-bold;
 }
