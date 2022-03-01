@@ -10,17 +10,10 @@ import {
   FormActions,
 } from '@contexts/FormContext'
 
-import styles from './styles/JaECliente.module.css'
+import styles from './styles/jaecliente.module.css'
 
 const JaECliente = (): JSX.Element => {
   const { state, dispatch } = useFormContext()
-
-  const handleClickOnSelect = () => {
-    dispatch({
-      type: FormActions.setIsAlreadyClient,
-      payload: !state.isAlreadyClient,
-    })
-  }
 
   const handleNameInputChange = (
     event: React.ChangeEvent<HTMLInputElement>
@@ -31,11 +24,25 @@ const JaECliente = (): JSX.Element => {
     })
   }
 
+  const handleClickOnIsAlreadyClient = () => {
+    dispatch({
+      type: FormActions.setIsAlreadyClient,
+      payload: true,
+    })
+  }
+
+  const handleClickOnNewClient = () => {
+    dispatch({
+      type: FormActions.setIsAlreadyClient,
+      payload: false,
+    })
+  }
+
   return (
     <SiteLayout>
       <h2 className={styles.pageTitle}>Já nos conhecemos?</h2>
       <p className={styles.pageDescription}>
-        Para começar, preencha seu primeiro nome, e escolha o perfil que melhor
+        Para começar, preencha seu primeiro nome, e escolha a opção que melhor
         descreva seu perfil.
       </p>
       <Input
@@ -51,12 +58,12 @@ const JaECliente = (): JSX.Element => {
       <SelectOption
         label="Sim, eu já declarei IR com você antes"
         selected={state.isAlreadyClient}
-        onClick={handleClickOnSelect}
+        onClick={handleClickOnIsAlreadyClient}
       />
       <SelectOption
         label="Não, esta será a primeira vez"
         selected={!state.isAlreadyClient}
-        onClick={handleClickOnSelect}
+        onClick={handleClickOnNewClient}
       />
       <NavButtonsContainer
         goBackPath="/declaracao"
