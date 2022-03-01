@@ -51,6 +51,7 @@ const JaECliente = (): JSX.Element => {
         type="text"
         placeholder="Digite seu primeiro nome"
         onChange={handleNameInputChange}
+        mask=""
       />
       <p className={styles.pageContent}>
         Você já é meu cliente de anos anteriores?

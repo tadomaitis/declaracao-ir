@@ -73,6 +73,7 @@ const JaEClientePasso1 = (): JSX.Element => {
         type="text"
         placeholder="Digite seu sobrenome"
         onChange={handleSurnameInputChange}
+        mask=""
       />
       <Input
         id="cpf"
@@ -80,6 +81,7 @@ const JaEClientePasso1 = (): JSX.Element => {
         type="text"
         placeholder="Digite seu CPF (apenas números)"
         onChange={handleCPFInputChange}
+        mask="999.999.999-99"
       />
       <Input
         id="phone"
@@ -87,6 +89,7 @@ const JaEClientePasso1 = (): JSX.Element => {
         type="tel"
         placeholder="(00) 00000-0000"
         onChange={handlePhoneInputChange}
+        mask="(99) 99999-9999"
       />
       <p className={styles.pageContent}>
         Houve alguma alteração referente a bens (imóveis, veículos e/ou
@@ -94,9 +97,10 @@ const JaEClientePasso1 = (): JSX.Element => {
       </p>
       <Warning
         title="Atenção"
-        content="Se seus dependentes trabalharam com registro em carteira ou receberam
-          algum benefício (como auxílio emergencial, por exemplo), você deve
-          retirá-los da declaração. Veja mais em nosso FAQ aqui."
+        content="Se ao longo do ano de 2021 seus dependentes trabalharam com 
+          registro em carteira ou receberam algum benefício (como auxílio 
+          emergencial, por exemplo), você deve retirá-los da declaração. Veja 
+          mais em nosso FAQ aqui."
       />
       <SelectOption
         label="Não, não houve nenhuma alteração de bens e/ou dependentes"
