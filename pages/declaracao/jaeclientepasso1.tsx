@@ -11,6 +11,7 @@ import {
 } from '@contexts/FormContext'
 
 import styles from './styles/JaECliente.module.css'
+import Image from 'next/image'
 
 const JaEClientePasso1 = (): JSX.Element => {
   const { state, dispatch } = useFormContext()
@@ -40,7 +41,7 @@ const JaEClientePasso1 = (): JSX.Element => {
       <h2 className={styles.pageTitle}>
         Bem-vindo de volta, {state.firstName}
       </h2>
-      <p className={styles.pageDescription}>
+      <p className={styles.pageContent}>
         Como você já é meu cliente, já temos a maior parte dos dados que
         precisamos. Vamos só confirmar umas coisinhas!
       </p>
@@ -56,9 +57,14 @@ const JaEClientePasso1 = (): JSX.Element => {
         aplicação financeira) ou dependentes (filhos, cônjuges e/ou pais)?
       </p>
       <p className={styles.attention}>
+        <div className={styles.iconContainer}>
+          <Image src="/svgs/warning.svg" width={24} height={24} />
+          Atenção
+          <Image src="/svgs/warning.svg" width={24} height={24} />
+        </div>
         Se seus dependentes trabalharam com registro em carteira ou receberam
-        algum benefício (auxílio emergencial, por exemplo), deverá retirá-los da
-        declaração. Veja mais em nosso FAQ aqui.
+        algum benefício (como auxílio emergencial, por exemplo), você deve
+        retirá-los da declaração. Veja mais em nosso FAQ aqui.
       </p>
       <SelectOption
         label="Não, não houve nenhuma alteração de bens e/ou dependentes"
