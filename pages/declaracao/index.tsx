@@ -2,7 +2,7 @@ import Image from 'next/image'
 import { SiteLayout } from '@components/SiteLayout/SiteLayout'
 import { GoForwardLink } from '@components/Buttons/GoForwardLink/GoForwardLink'
 
-import styles from './styles/Declaracao.module.css'
+import styles from './styles/declaracao.module.css'
 
 const Declaracao = () => {
   return (
@@ -29,7 +29,7 @@ const Declaracao = () => {
           fim de tornar mais dinâmica a organização das informações necessárias.
           Vamos lá?
         </p>
-        <GoForwardLink path="/declaracao/jaecliente" label="Começar" />
+        <GoForwardLink path="/declaracao/inicial" label="Começar" />
       </div>
     </SiteLayout>
   )
