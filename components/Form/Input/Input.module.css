@@ -1,9 +1,5 @@
 .inputContainer {
-  @apply col-span-full sm:col-span-3;
-}
-
-.inputLabel {
-  @apply text-sm;
+  @apply col-span-full my-2 sm:col-span-3;
 }
 
 .input {
