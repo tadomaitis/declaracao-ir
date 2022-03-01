@@ -62,6 +62,10 @@ const formReducer = (state: Client, action: Action) => {
   switch (action.type) {
     case FormActions.setCurrentStep:
       return { ...state, currentStep: action.payload }
+    case FormActions.setFirstName:
+      return { ...state, firstName: action.payload }
+    case FormActions.setSurname:
+      return { ...state, surname: action.payload }
     case FormActions.setFullName:
       return { ...state, fullName: action.payload }
     case FormActions.setCPF:
@@ -72,6 +76,8 @@ const formReducer = (state: Client, action: Action) => {
       return { ...state, hasDeclaredBefore: action.payload }
     case FormActions.setIsAlreadyClient:
       return { ...state, isAlreadyClient: action.payload }
+    case FormActions.setChangesFromPreviousDeclaration:
+      return { ...state, changesFromPreviousDeclaration: action.payload }
     case FormActions.setHasDependents:
       return { ...state, hasDependents: action.payload }
     case FormActions.setVoterCard:
