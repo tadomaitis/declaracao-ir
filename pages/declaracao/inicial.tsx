@@ -3,6 +3,7 @@ import { ReactElement } from 'react'
 import { NavButtonsContainer } from '@components/Buttons/NavButtonsContainer/NavButtonsContainer'
 import { SiteLayout } from '@components/SiteLayout/SiteLayout'
 import { Input } from '@components/Form/Input/Input'
+import { Paragraph } from '@components/Paragraph/Paragraph'
 import { SelectOption } from '@components/SelectOption/SelectOption'
 import {
   FormProvider,
@@ -41,10 +42,10 @@ const JaECliente = (): JSX.Element => {
   return (
     <SiteLayout>
       <h2 className={styles.pageTitle}>Já nos conhecemos?</h2>
-      <p className={styles.pageDescription}>
-        Para começar, preencha seu primeiro nome, e escolha a opção que melhor
-        descreva seu perfil.
-      </p>
+      <Paragraph
+        content="Para começar, preencha seu primeiro nome, e escolha a opção que melhor
+        descreva seu perfil."
+      />
       <Input
         id="firsName"
         label="Seu nome"
@@ -53,9 +54,7 @@ const JaECliente = (): JSX.Element => {
         onChange={handleNameInputChange}
         mask=""
       />
-      <p className={styles.pageContent}>
-        Você já é meu cliente de anos anteriores?
-      </p>
+      <Paragraph content="Você já é meu cliente de anos anteriores?" />
       <SelectOption
         label="Sim, eu já declarei IR com você antes"
         selected={state.isAlreadyClient}

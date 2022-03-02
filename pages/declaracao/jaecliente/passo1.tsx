@@ -1,6 +1,7 @@
 import { ReactElement } from 'react'
 import { NavButtonsContainer } from '@components/Buttons/NavButtonsContainer/NavButtonsContainer'
 import { SiteLayout } from '@components/SiteLayout/SiteLayout'
+import { Paragraph } from '@components/Paragraph/Paragraph'
 import { Input } from '@components/Form/Input/Input'
 import { SelectOption } from '@components/SelectOption/SelectOption'
 import { Warning } from '@components/Warning/Warning'
@@ -63,10 +64,10 @@ const JaEClientePasso1 = (): JSX.Element => {
       <h2 className={styles.pageTitle}>
         Bem-vindo de volta, {state.firstName}
       </h2>
-      <p className={styles.pageContent}>
-        Como você já é meu cliente, já temos a maior parte dos dados que
-        precisamos. Vamos só confirmar umas coisas!
-      </p>
+      <Paragraph
+        content="Como você já é meu cliente, já temos a maior parte dos dados que
+        precisamos. Vamos só confirmar umas coisas!"
+      />
       <Input
         id="surname"
         label="Seu sobrenome"
@@ -91,12 +92,12 @@ const JaEClientePasso1 = (): JSX.Element => {
         onChange={handlePhoneInputChange}
         mask="(99) 99999-9999"
       />
-      <p className={styles.pageContent}>
-        Houve alguma alteração referente a bens (imóveis, veículos e/ou
-        aplicação financeira) ou dependentes (filhos, cônjuges e/ou pais)?
-      </p>
+      <Paragraph
+        content="Houve alguma alteração referente a bens (imóveis, veículos e/ou
+        aplicação financeira) ou dependentes (filhos, cônjuges e/ou pais)?"
+      />
       <Warning
-        title="Atenção"
+        title="Atenção!"
         content="Se ao longo do ano de 2021 seus dependentes trabalharam com 
           registro em carteira ou receberam algum benefício (como auxílio 
           emergencial, por exemplo), você deve retirá-los da declaração. Veja 

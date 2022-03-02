@@ -5,7 +5,3 @@
 .pageTitle {
   @apply my-2 text-center text-xl font-bold text-green-900;
 }
-
-.pageContent {
-  @apply my-2 text-base text-gray-800;
-}

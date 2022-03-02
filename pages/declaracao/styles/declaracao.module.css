@@ -5,7 +5,3 @@
 .mainTitle {
   @apply mt-2 mb-4 text-3xl font-bold text-violet-700;
 }
-
-.mainText {
-  @apply mt-4 text-lg;
-}

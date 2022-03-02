@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import { SiteLayout } from '@components/SiteLayout/SiteLayout'
 import { GoForwardLink } from '@components/Buttons/GoForwardLink/GoForwardLink'
+import { Paragraph } from '@components/Paragraph/Paragraph'
 
 import styles from './styles/declaracao.module.css'
 
@@ -21,14 +22,12 @@ const Declaracao = () => {
           Olá, bem-vindo(a) ao nosso formulário para declaração do Imposto de
           Renda {new Date().getFullYear()}
         </h1>
-        <p className={styles.mainText}>
-          Agradecemos por nos escolher para fazer sua declaração!
-        </p>
-        <p className={styles.mainText}>
-          Para este ano, criamos um processo automatizado de contato inicial, a
+        <Paragraph content="Agradecemos por nos escolher para fazer sua declaração!" />
+        <Paragraph
+          content="Para este ano, criamos um processo automatizado de contato inicial, a
           fim de tornar mais dinâmica a organização das informações necessárias.
-          Vamos lá?
-        </p>
+          Vamos lá?"
+        />
         <GoForwardLink path="/declaracao/inicial" label="Começar" />
       </div>
     </SiteLayout>
