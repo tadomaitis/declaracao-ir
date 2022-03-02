@@ -1,7 +1,8 @@
-import { ReactElement, useEffect } from 'react'
+import { ReactElement, useEffect, useState } from 'react'
 import Image from 'next/image'
 
 import { SiteLayout } from '@components/SiteLayout/SiteLayout'
+import { GoBackLink } from '@components/Buttons/GoBackLink/GoBackLink'
 import {
   FormProvider,
   useFormContext,
@@ -10,18 +11,40 @@ import {
 
 import styles from '../styles/conclusao.module.css'
 
+const renderListItems = (obj: any): JSX.Element => {
+  return (
+    <>
+      {Object.entries(obj).map(([key, value]) => {
+        return (
+          <li key={key} className={styles.collectedDataItem}>
+            <span className={styles.collectedDataItemLabel}>{key}:</span>
+            {value}
+          </li>
+        )
+      })}
+    </>
+  )
+}
+
 const Conclusao = (): JSX.Element => {
   const { state, dispatch } = useFormContext()
+  const [collectedData, setCollectedData] = useState({})
 
   useEffect(() => {
     dispatch({
       type: FormActions.setFullName,
       payload: `${state.firstName} ${state.surname}`,
     })
-    Object.values(state).forEach((value) => {
-      if (value) {
-        console.log(value)
-      }
+  }, [])
+
+  useEffect(() => {
+    setCollectedData({
+      Nome: ` ${state.fullName}`,
+      CPF: ` ${state.cpf}`,
+      Telefone: ` ${state.phone}`,
+      'Já é cliente': state.isAlreadyClient ? ' sim' : ' não',
+      'Alteração de bens ou dependentes em relação à última declaração':
+        state.changesFromPreviousDeclaration ? ' sim' : ' não',
     })
   }, [])
 
@@ -52,6 +75,19 @@ const Conclusao = (): JSX.Element => {
       <p className={styles.pageContent}>
         Agradecemos a sua confiança no nosso trabalho.
       </p>
+      <div className={styles.collectedData}>
+        <ul className={styles.collectedDataList}>
+          {renderListItems(collectedData)}
+        </ul>
+      </div>
+      <GoBackLink path="/declaracao/inicial" label="Voltar" />
+      <a
+        href={`https://wa.me/5519991986063?text=${JSON.stringify(
+          collectedData
+        )}`}
+      >
+        Concluir
+      </a>
     </SiteLayout>
   )
 }
